@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 
 const springTransition = {
-  type: "spring",
   mass: 0.5,
   damping: 11.5,
   stiffness: 100,

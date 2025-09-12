@@ -48,7 +48,7 @@ export const POST = async (req: NextRequest): Promise<NextResponse> => {
 
     // Initialize Pinecone
     const pinecone = new Pinecone({
-      apiKey: process.env.PINECONE_API_KEY,
+      apiKey: process.env.PINECONE_API_KEY as string,
     });
 
     const pineconeIndex = pinecone.Index("mybot");
