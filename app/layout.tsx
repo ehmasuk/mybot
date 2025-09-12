@@ -1,8 +1,8 @@
 import AuthProvider from "@/providers/AuthProvider";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import localFont from "next/font/local";
-import "./globals.css";
 import React from "react";
+import "./globals.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

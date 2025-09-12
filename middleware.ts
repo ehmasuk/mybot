@@ -7,10 +7,13 @@ export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
   if (path.startsWith("/user") && !session) {
-    return NextResponse.redirect(new URL("/account", request.url));
+    return NextResponse.redirect(new URL("/login", request.url));
   }
 
-  if (path === "/account" && session) {
+  if (path === "/login" && session) {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+  if (path === "/register" && session) {
     return NextResponse.redirect(new URL("/", request.url));
   }
 
@@ -18,5 +21,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/account", "/user/:path*"],
+  matcher: ["/", "/login", "/register", "/user/:path*"],
 };
+

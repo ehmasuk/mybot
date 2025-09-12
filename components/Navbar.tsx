@@ -15,10 +15,12 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Bot className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold text-foreground">MyBot</span>
-          </div>
+          <Link href="/">
+            <div className="flex items-center space-x-2">
+              <Bot className="h-8 w-8 text-primary" />
+              <span className="text-xl font-bold text-foreground">MyBot</span>
+            </div>
+          </Link>
 
           {/* Profile and Actions */}
           <div className="flex items-center space-x-4">
@@ -30,21 +32,23 @@ export function Navbar() {
                   </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56" align="end" forceMount>
-                  <Link href={`/user/${data?.user?.id}`}>
-                    <DropdownMenuItem>
-                      <User className="mr-2 h-4 w-4" />
-                      <span>Profile</span>
-                    </DropdownMenuItem>
-                  </Link>
+                  <div style={{ all: "unset" }}>
+                    <Link href={`/user/${data?.user?.id}`}>
+                      <DropdownMenuItem>
+                        <User className="mr-2 h-4 w-4" />
+                        <span>Profile</span>
+                      </DropdownMenuItem>
+                    </Link>
 
-                  <DropdownMenuItem onClick={() => logoutAction()}>
-                    <LogOut className="mr-2 h-4 w-4" />
-                    <span>Log out</span>
-                  </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => logoutAction()}>
+                      <LogOut className="mr-2 h-4 w-4" />
+                      <span>Log out</span>
+                    </DropdownMenuItem>
+                  </div>
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Link href="/account">
+              <Link href="/login">
                 <Button size="sm">Get Started</Button>
               </Link>
             )}
