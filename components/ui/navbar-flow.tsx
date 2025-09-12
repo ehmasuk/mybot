@@ -27,20 +27,12 @@ const ListItem = ({
   selected: string | null;
   element: string;
   children: React.ReactNode;
-}){
+}) => {
   return (
     <div
       className="relative"
       onMouseEnter={() => setSelected(element)}
-      onMouseLeave={(e) => {
-        const dropdown = e.currentTarget.querySelector('.dropdown-content');
-        if (dropdown) {
-          const dropdownRect = dropdown.getBoundingClientRect();
-          if (e.clientY < dropdownRect.top - 20) {
-            setSelected(null);
-          }
-        }
-      }}>
+      onMouseLeave={() => setSelected(null)}>
       <motion.p
         transition={{ duration: 0.3 }}
         className="cursor-pointer text-gray-800 dark:text-gray-200 font-medium text-base lg:text-xl whitespace-nowrap hover:opacity-[0.9] hover:text-gray-900 dark:hover:text-white py-1">
@@ -64,7 +56,7 @@ const ListItem = ({
                 onMouseEnter={() => setSelected(element)}
                 onMouseLeave={() => setSelected(null)}>
                 <motion.div layout className="w-max h-full p-4 min-w-48">
-                  {children}
+                  <div style={{ all: 'unset' }}>{children}</div>
                 </motion.div>
               </motion.div>
             </div>
@@ -83,7 +75,7 @@ export const HoverLink = ({
   url: string;
   children: React.ReactNode;
   onPress: () => void;
-}){
+})=>{
   return (
     <a
       href={url}
@@ -104,7 +96,7 @@ export const FeatureItem = ({
   url: string;
   info: string;
   onPress: () => void;
-}){
+})=>{
   return (
     <a
       href={url}

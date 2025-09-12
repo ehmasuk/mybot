@@ -28,7 +28,7 @@ export function HeroSection() {
 
           {/* Subheading */}
           <p className="mb-10 text-lg text-muted-foreground sm:text-xl lg:text-2xl text-pretty max-w-3xl mx-auto">
-            MyBot lets you build a custom chatbot with your own instructions and knowledge base. It's a powerful tool to create a personalized AI experience, and it's completely free.
+            MyBot lets you build a custom chatbot with your own instructions and knowledge base. It&apos;s a powerful tool to create a personalized AI experience, and it&apos;s completely free.
           </p>
 
           {/* CTA Buttons */}

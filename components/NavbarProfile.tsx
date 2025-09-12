@@ -29,7 +29,7 @@ export function NavbarProfile({ navItems }: { navItems: NavItem[] }) {
         setDailyMessages(res.dailyMessages);
       },
     });
-  }, [userId]);
+  }, [userId,postData]);
 
   return (
     <div className="relative w-full">

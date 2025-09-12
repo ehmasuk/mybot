@@ -2,13 +2,13 @@
 
 import { Button, message } from "antd";
 import { useParams } from "next/navigation";
-import { useEffect, useState, ChangeEvent } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 function InstructionPage() {
   const [defaultValue, setDefaultValue] = useState<string>("");
   const [newInstruction, setNewInstruction] = useState<string>("");
 
-  const {id:userId} = useParams();
+  const { id: userId } = useParams();
 
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -43,7 +43,7 @@ function InstructionPage() {
       const res = await fetch("/api/instruction", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({userId,instruction: newInstruction,}),
+        body: JSON.stringify({ userId, instruction: newInstruction }),
       });
 
       const data = await res.json();
@@ -76,12 +76,16 @@ function InstructionPage() {
             <div className="relative">
               <textarea
                 className="border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 flex w-full rounded-md border bg-transparent px-3 py-2 text-base leading-relaxed resize-none outline-none focus:border-accent focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-[200px]"
-                maxLength={1000}
+                maxLength={500}
                 value={newInstruction}
                 onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setNewInstruction(e.target.value)}
                 disabled={postLoading || loading}
                 rows={10}
-                placeholder={loading ? "Loading..." : "For example: 'You are a friendly and helpful customer support agent for a clothing store. Your goal is to answer questions about products, orders, and shipping.'"}
+                placeholder={
+                  loading
+                    ? "Loading..."
+                    : "For example: 'You are a friendly and helpful customer support agent for a clothing store. Your goal is to answer questions about products, orders, and shipping.'"
+                }
               />
             </div>
           </div>

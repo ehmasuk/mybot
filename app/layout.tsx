@@ -1,6 +1,7 @@
 import AuthProvider from "@/providers/AuthProvider";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import localFont from "next/font/local";
+import NextTopLoader from "nextjs-toploader";
 import React from "react";
 import "./globals.css";
 
@@ -25,7 +26,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AuthProvider>
-          <AntdRegistry>{children}</AntdRegistry>
+          <AntdRegistry>
+            <NextTopLoader color="#1C2331" />
+            {children}
+          </AntdRegistry>
         </AuthProvider>
       </body>
     </html>

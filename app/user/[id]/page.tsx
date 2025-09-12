@@ -36,7 +36,7 @@ function Welcome() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-medium text-sm">Define Instructions</p>
-                  <p className="text-xs text-muted-foreground">Provide a role and instructions for your bot (e.g., 'You are a helpful assistant for my website').</p>
+                  <p className="text-xs text-muted-foreground">Provide a role and instructions for your bot (e.g., &apos;You are a helpful assistant for my website&apos;).</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/50">
@@ -54,7 +54,7 @@ function Welcome() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-medium text-sm">Test Your Bot</p>
-                  <p className="text-xs text-muted-foreground">Interact with your bot in the 'Test Drive' tab to evaluate its performance.</p>
+                  <p className="text-xs text-muted-foreground">Interact with your bot in the &apos;Test Drive&apos; tab to evaluate its performance.</p>
                 </div>
               </div>
             </div>
