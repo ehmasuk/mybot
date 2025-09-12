@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Bot, Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import Link from "next/link";
 
@@ -156,8 +156,11 @@ export const MobileNavToggle = ({ isOpen, onClick }: { isOpen: boolean; onClick:
 
 export const NavbarLogo = () => {
   return (
-    <Link href="/" className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black">
-      <span className="font-medium text-black dark:text-white">MYBOT</span>
+    <Link href="/" className="block z-10">
+        <div className="flex items-center space-x-2">
+          <Bot className="h-6 w-6 text-primary" />
+          <span className="text-lg font-bold text-foreground">MyBot</span>
+        </div>
     </Link>
   );
 };

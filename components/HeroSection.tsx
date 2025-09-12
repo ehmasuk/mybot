@@ -3,7 +3,7 @@ import { ArrowRight, Bot, Sparkles } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background via-muted/30 to-card py-20 sm:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-background via-muted/30 to-card">
       
       
   <div className="pattern-boxes pattern-gray-500 pattern-bg-white 
@@ -35,19 +35,11 @@ export function HeroSection() {
               Start Building Free
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-transparent">
-              Watch Demo
-            </Button>
           </div>
 
           {/* Hero Image/Illustration */}
           <div className="mt-16 relative">
             <div className="relative mx-auto max-w-4xl">
-              {/* <img
-                src="/modern-chatbot-interface-dashboard.jpg"
-                alt="MyBot Dashboard Interface"
-                className="rounded-xl shadow-2xl ring-1 ring-border"
-              /> */}
               <div className="absolute -top-4 -right-4 bg-secondary text-secondary-foreground rounded-full p-3">
                 <Bot className="h-8 w-8" />
               </div>

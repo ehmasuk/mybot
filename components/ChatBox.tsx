@@ -4,15 +4,16 @@ import usePost from "@/hooks/usePost";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useParams } from "next/navigation";
-import { useCallback, useEffect, useRef, useState, ChangeEvent, FormEvent } from "react";
+import { ChangeEvent, FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { PlaceholdersAndVanishInput } from "./ui/placeholders-and-vanish-input";
+import { message } from "antd";
 
 type Message = {
   role: "bot" | "human";
   message: string;
 };
 
-function ChatBox(): JSX.Element {
+function ChatBox() {
   const [userMessage, setUserMessage] = useState<string>("");
   const { postData } = usePost();
   const chatBoxBodyRef = useRef<HTMLDivElement | null>(null);
@@ -46,12 +47,32 @@ function ChatBox(): JSX.Element {
     },
   ];
 
+  // update and check daily messages
+  const updateDailyMessages = async (): Promise<boolean> => {
+    return new Promise((resolve) => {
+      postData({
+        endpoint: "/daily-messages/update",
+        data: { userId },
+        onSuccess: () => {
+          resolve(false);
+        },
+        onError: () => {
+          message.error("You have exceeded your daily message limit of 5. Please try again tomorrow.");
+          resolve(true);
+        },
+      });
+    });
+  };
+
   const [conversations, setConversations] = useState<Message[]>(initialMessages);
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSendMessage = async (e: FormEvent) => {
     e.preventDefault();
     if (!userMessage.trim()) return;
+
+    const dailyLimitExceeded = await updateDailyMessages();
+    if (dailyLimitExceeded) return;
 
     const message = userMessage.trim();
     setUserMessage("");
@@ -65,19 +86,19 @@ function ChatBox(): JSX.Element {
 
     try {
       setLoading(true);
-      const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/chat`,
-        {
-          userId,
-          question: message,
-          history: conversations,
-        }
-      );
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/chat`, {
+        userId,
+        question: message,
+        history: conversations,
+      });
 
       const botResponse: Message = { role: "bot", message: response.data };
-      setConversations((prev) => [...prev, botResponse]);
+      setConversations((prev) => {
+        const newMessage = [...prev, botResponse];
+        saveConversationToDatabase(newMessage);
+        return newMessage;
+      });
 
-      saveConversationToDatabase([...conversations, botResponse]);
       console.log([...conversations, botResponse]);
     } catch (error) {
       console.error(error);
@@ -88,9 +109,7 @@ function ChatBox(): JSX.Element {
 
   const getUsersConversations = async (id: string) => {
     try {
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/conversation?conversationId=${id}`
-      );
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/conversation?conversationId=${id}`);
       setConversations(res.data?.conversation?.messages || []);
     } catch (error) {
       console.error(error);
@@ -136,10 +155,7 @@ function ChatBox(): JSX.Element {
     <div className="h-full w-full overflow-hidden border">
       <main className="group relative flex h-full flex-col bg-white">
         <div className="relative flex flex-1 basis-full flex-col overflow-y-hidden scroll-smooth shadow-inner">
-          <div
-            ref={chatBoxBodyRef}
-            className="flex w-full flex-1 flex-col space-y-3 overflow-y-auto px-5 pt-5 pb-4 sm:overscroll-contain scroll-smooth"
-          >
+          <div ref={chatBoxBodyRef} className="flex w-full flex-1 flex-col space-y-3 overflow-y-auto px-5 pt-5 pb-4 sm:overscroll-contain scroll-smooth">
             {conversations?.map((item, index) =>
               item.role === "bot" ? (
                 <div key={index} className="flex w-full items-end pr-8">
@@ -190,12 +206,7 @@ function ChatBox(): JSX.Element {
         </div>
         {!unableToSendMessage && (
           <div className="flex shrink-0 flex-col justify-end">
-            <PlaceholdersAndVanishInput
-              placeholders={placeholders}
-              onChange={handleChange}
-              onSubmit={handleSendMessage}
-              value={userMessage}
-            />
+            <PlaceholdersAndVanishInput placeholders={placeholders} onChange={handleChange} onSubmit={handleSendMessage} value={userMessage} />
           </div>
         )}
       </main>

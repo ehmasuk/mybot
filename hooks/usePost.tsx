@@ -17,7 +17,7 @@ function usePost() {
     const [data, setData] = useState<any>(null);
     const [loading, setLoading] = useState<boolean>(false);
 
-    const postData = async ({ baseUrl = process.env.NEXT_PUBLIC_API_URL, endpoint, data, loadingText = "Loading..", onSuccess, onError, successText = "Completed 🎉", allowMessage = true }: PostDataProps) => {
+    const postData = async ({ baseUrl = process.env.NEXT_PUBLIC_API_URL, endpoint, data, loadingText = "Loading..", onSuccess, onError, successText = "Completed 🎉", allowMessage = false }: PostDataProps) => {
         setLoading(true);
 
         if (allowMessage) {

@@ -12,7 +12,7 @@ type LoginValues = {
   password: string;
 };
 
-function LoginForm(): JSX.Element {
+function LoginForm() {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (values: LoginValues) => {

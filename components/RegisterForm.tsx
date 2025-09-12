@@ -12,7 +12,7 @@ type RegisterValues = {
   password: string;
 };
 
-function RegisterForm(): JSX.Element {
+function RegisterForm() {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (values: RegisterValues) => {

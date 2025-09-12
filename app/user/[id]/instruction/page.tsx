@@ -4,7 +4,7 @@ import { Button, message } from "antd";
 import { useParams } from "next/navigation";
 import { useEffect, useState, ChangeEvent } from "react";
 
-function InstructionPage(): JSX.Element {
+function InstructionPage() {
   const [defaultValue, setDefaultValue] = useState<string>("");
   const [newInstruction, setNewInstruction] = useState<string>("");
 
@@ -70,6 +70,7 @@ function InstructionPage(): JSX.Element {
             <label htmlFor="instructions" className="flex items-center gap-2 select-none text-base font-medium">
               Bot Instructions
             </label>
+            <p className="text-sm mb-3 text-blue-500">Add your bot role, it must be specific eg: you are a helpful assistant/doctor</p>
             <div className="relative">
               <textarea
                 className="border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 flex w-full rounded-md border bg-transparent px-3 py-2 text-base leading-relaxed resize-none outline-none focus:border-accent focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-[200px]"

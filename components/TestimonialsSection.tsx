@@ -78,7 +78,7 @@ export function TestimonialsSection() {
                 </div>
 
                 {/* Testimonial Content */}
-                <blockquote className="text-muted-foreground mb-6 text-pretty">"{testimonial.content}"</blockquote>
+                <blockquote className="text-muted-foreground mb-6 text-pretty">{testimonial.content}</blockquote>
 
                 {/* Author */}
                 <div className="flex items-center">

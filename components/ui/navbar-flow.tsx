@@ -27,7 +27,7 @@ const ListItem = ({
   selected: string | null;
   element: string;
   children: React.ReactNode;
-}): JSX.Element => {
+}){
   return (
     <div
       className="relative"
@@ -83,7 +83,7 @@ export const HoverLink = ({
   url: string;
   children: React.ReactNode;
   onPress: () => void;
-}): JSX.Element => {
+}){
   return (
     <a
       href={url}
@@ -104,7 +104,7 @@ export const FeatureItem = ({
   url: string;
   info: string;
   onPress: () => void;
-}): JSX.Element => {
+}){
   return (
     <a
       href={url}
@@ -134,7 +134,7 @@ const NavbarFlow = ({
   extraIcons: React.ReactNode[];
   styleName?: string;
   rightComponent?: React.ReactNode;
-}): JSX.Element => {
+}) => {
   const [sequenceDone, setSequenceDone] = useState<boolean>(false);
   const [mobileMenuVisible, setMobileMenuVisible] = useState<boolean>(false);
   const [mobileView, setMobileView] = useState<boolean>(false);

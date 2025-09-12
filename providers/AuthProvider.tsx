@@ -1,7 +1,7 @@
 import { SessionProvider } from 'next-auth/react'
 import React from 'react'
 
-function AuthProvider({children}: {children: React.ReactNode}): JSX.Element {
+function AuthProvider({children}: {children: React.ReactNode}){
   return (
     <SessionProvider>{children}</SessionProvider>
   )

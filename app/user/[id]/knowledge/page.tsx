@@ -2,10 +2,9 @@
 
 import { Button, message, notification } from "antd";
 import { useParams } from "next/navigation";
-import { useEffect, useState, ChangeEvent } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 function KnowledgeTab() {
-
   const [newKnowledge, setNewKnowledge] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const [postLoading, setPostLoading] = useState<boolean>(false);
@@ -89,6 +88,8 @@ function KnowledgeTab() {
             <label className="flex items-center gap-2 text-base font-medium" htmlFor="knowledge">
               Bot Knowledge
             </label>
+
+            <p className="text-sm mb-3 text-blue-500">Add your bot data, it more like a databse where all you information are added and bot will answer according to that</p>
             <textarea
               className="border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 flex w-full rounded-md border bg-transparent px-3 py-2 text-base leading-relaxed resize-none outline-none focus:border-blue-500 focus:ring-blue-500/20 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-[200px]"
               disabled={postLoading || loading}

@@ -28,23 +28,6 @@ const steps = [
   },
 ]
 
-const benefits = [
-  {
-    icon: Zap,
-    title: "Lightning Fast Setup",
-    description: "Get your chatbot live in under 10 minutes",
-  },
-  {
-    icon: Users,
-    title: "Multi-platform Support",
-    description: "Deploy to web, mobile, Slack, and more",
-  },
-  {
-    icon: BarChart3,
-    title: "Advanced Analytics",
-    description: "Track conversations and optimize performance",
-  },
-]
 
 export function HowItWorksSection() {
   return (
@@ -105,26 +88,7 @@ export function HowItWorksSection() {
           </div>
         </div>
 
-        <div className="bg-muted/30 rounded-2xl p-8 lg:p-12">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Why Choose MyBot?</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Built for developers, designed for everyone. Experience the perfect balance of power and simplicity.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 rounded-2xl bg-background border border-border flex items-center justify-center mx-auto mb-4 group-hover:border-primary/50 transition-colors duration-300">
-                  <benefit.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h4 className="text-lg font-semibold text-foreground mb-2">{benefit.title}</h4>
-                <p className="text-muted-foreground text-sm">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   )

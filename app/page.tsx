@@ -15,7 +15,6 @@ function HomePage() {
         <HeroSection />
         <FeaturesSection />
         <HowItWorksSection />
-        <TestimonialsSection />
       </main>
       <Footer />
     </div>
