@@ -3,7 +3,7 @@
 import { logoutAction } from "@/actions/authActions";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Bot, LogOut, User, UserIcon } from "lucide-react";
+import { Bot, Github, LogOut, User, UserIcon } from "lucide-react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 
@@ -48,6 +48,12 @@ export function Navbar() {
                 <Button size="sm">Get Started</Button>
               </Link>
             )}
+            <div className="rounded-full bg-gray-100 size-8 cursor-pointer hover:bg-gray-200 duration-300 grid place-items-center">
+              {" "}
+              <Link href="https://github.com/ehmasuk" target="_blank" rel="noopener noreferrer">
+                <Github className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

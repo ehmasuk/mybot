@@ -1,30 +1,30 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Bot, Cog, Rocket, Zap, Users, BarChart3 } from "lucide-react"
+import { ArrowRight, Bot, Cog, Rocket, Zap, Users, BarChart3, UserPlus, BrainCircuit } from "lucide-react"
 
 const steps = [
   {
     step: "01",
-    icon: Bot,
-    title: "Design Your Bot",
+    icon: UserPlus,
+    title: "Register & Log In",
     description:
-      "Use our intuitive drag-and-drop interface to create conversation flows, add responses, and define your bot's personality with zero coding required.",
-    features: ["Visual Flow Builder", "Pre-built Templates", "Custom Responses"],
+      "Create a free account to get started. Once you're logged in, you can create and manage your chatbots.",
+    features: ["Free Registration", "Secure Authentication", "User Dashboard"],
   },
   {
     step: "02",
-    icon: Cog,
-    title: "Configure & Train",
+    icon: BrainCircuit,
+    title: "Create & Train Your Bot",
     description:
-      "Set up integrations, train your AI with custom data, and configure advanced features like analytics and user management seamlessly.",
-    features: ["AI Training", "API Integrations", "User Management"],
+      "Define your chatbot's personality with custom instructions and upload your own data to build its knowledge base.",
+    features: ["Custom Instructions", "Knowledge Base Upload", "Personalized AI"],
   },
   {
     step: "03",
-    icon: Rocket,
-    title: "Deploy & Scale",
+    icon: Bot,
+    title: "Chat with Your Bot",
     description:
-      "Launch your chatbot across multiple platforms with one click. Monitor performance and iterate based on real user feedback and analytics.",
-    features: ["Multi-platform Deploy", "Real-time Analytics", "Performance Monitoring"],
+      "Interact with your newly created chatbot through a simple and intuitive chat interface. Test its knowledge and refine its responses.",
+    features: ["Instant Chat Interface", "Conversation History", "Iterative Improvement"],
   },
 ]
 
@@ -38,8 +38,7 @@ export function HowItWorksSection() {
             How MyBot Works
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Transform your ideas into intelligent chatbots in three simple steps. Our platform handles the complexity
-            while you focus on creating exceptional user experiences.
+            Transform your ideas into a personalized chatbot in three simple steps. Our platform handles the complexity so you can focus on creating a unique AI experience.
           </p>
         </div>
 

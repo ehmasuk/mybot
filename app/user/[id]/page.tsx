@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { Button } from "@/components/ui/button";
 import { Bot, Settings, Thermometer } from "lucide-react";
@@ -22,10 +22,10 @@ function Welcome() {
               </div>
             </div>
             <div data-slot="card-title" className="text-2xl font-bold">
-              Welcome to your bot garage!
+              Create Your Custom Chatbot
             </div>
             <div data-slot="card-description" className="text-muted-foreground text-base">
-              Build and train your AI companion in three simple steps
+              Follow these steps to build and train your personalized AI companion.
             </div>
           </div>
           <div data-slot="card-content" className="px-6 space-y-4">
@@ -35,8 +35,8 @@ function Welcome() {
                   <Bot size={24} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-sm">Start with bot role</p>
-                  <p className="text-xs text-muted-foreground">Add some role for your bot (eg: you are a helpful assistant)</p>
+                  <p className="font-medium text-sm">Define Instructions</p>
+                  <p className="text-xs text-muted-foreground">Provide a role and instructions for your bot (e.g., 'You are a helpful assistant for my website').</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/50">
@@ -44,8 +44,8 @@ function Welcome() {
                   <Settings size={24} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-sm">Train your bot</p>
-                  <p className="text-xs text-muted-foreground">Add relevant data so that it can answer according to your context</p>
+                  <p className="font-medium text-sm">Add Knowledge</p>
+                  <p className="text-xs text-muted-foreground">Upload relevant data to train your bot on your specific context.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/50">
@@ -53,8 +53,8 @@ function Welcome() {
                   <Thermometer size={24} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-sm">Test and Deploy</p>
-                  <p className="text-xs text-muted-foreground">Once training is complete, test your bots capabilities in the test drive tab</p>
+                  <p className="font-medium text-sm">Test Your Bot</p>
+                  <p className="text-xs text-muted-foreground">Interact with your bot in the 'Test Drive' tab to evaluate its performance.</p>
                 </div>
               </div>
             </div>

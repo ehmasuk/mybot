@@ -89,11 +89,13 @@ function KnowledgeTab() {
               Bot Knowledge
             </label>
 
-            <p className="text-sm mb-3 text-blue-500">Add your bot data, it more like a databse where all you information are added and bot will answer according to that</p>
+            <p className="text-sm text-muted-foreground">
+              Add the information you want your chatbot to know. This will serve as its primary knowledge base, and it will use this data to answer user questions. You can add text, FAQs, or any other information you want your bot to have.
+            </p>
             <textarea
               className="border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 flex w-full rounded-md border bg-transparent px-3 py-2 text-base leading-relaxed resize-none outline-none focus:border-blue-500 focus:ring-blue-500/20 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-[200px]"
               disabled={postLoading || loading}
-              placeholder={loading ? "Loading..." : "Enter your knowledge here..."}
+              placeholder={loading ? "Loading..." : "For example: \nQ: What are your shipping options?\nA: We offer standard, expedited, and overnight shipping.\n\nQ: What is your return policy?\nA: We accept returns within 30 days of purchase."}
               maxLength={1000}
               value={newKnowledge}
               onChange={handleChange}

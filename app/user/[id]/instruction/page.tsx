@@ -70,7 +70,9 @@ function InstructionPage() {
             <label htmlFor="instructions" className="flex items-center gap-2 select-none text-base font-medium">
               Bot Instructions
             </label>
-            <p className="text-sm mb-3 text-blue-500">Add your bot role, it must be specific eg: you are a helpful assistant/doctor</p>
+            <p className="text-sm text-muted-foreground">
+              Provide clear and concise instructions for your chatbot. This will define its role, personality, and behavior. The more specific you are, the better your chatbot will perform.
+            </p>
             <div className="relative">
               <textarea
                 className="border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 flex w-full rounded-md border bg-transparent px-3 py-2 text-base leading-relaxed resize-none outline-none focus:border-accent focus:ring-accent/20 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-[200px]"
@@ -79,7 +81,7 @@ function InstructionPage() {
                 onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setNewInstruction(e.target.value)}
                 disabled={postLoading || loading}
                 rows={10}
-                placeholder={loading ? "Loading..." : "Enter your bot instructions here... For example: 'You are a helpful assistant...'"}
+                placeholder={loading ? "Loading..." : "For example: 'You are a friendly and helpful customer support agent for a clothing store. Your goal is to answer questions about products, orders, and shipping.'"}
               />
             </div>
           </div>

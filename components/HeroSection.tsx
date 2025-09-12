@@ -15,24 +15,23 @@ export function HeroSection() {
           {/* Badge */}
           <div className="mb-8 inline-flex items-center rounded-full bg-secondary/10 px-4 py-2 text-sm font-medium text-secondary-foreground ring-1 ring-secondary/20">
             <Sparkles className="mr-2 h-4 w-4" />
-            Build Smarter Chatbots in Minutes
+            Free to Use: Your Personal AI Chatbot
           </div>
 
           {/* Main Heading */}
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl text-balance">
-            Create Powerful <span className="text-primary">Chatbots</span> Without Code
+            Create a <span className="text-primary">Chatbot</span> That Knows Your Data
           </h1>
 
           {/* Subheading */}
           <p className="mb-10 text-lg text-muted-foreground sm:text-xl lg:text-2xl text-pretty max-w-3xl mx-auto">
-            MyBot empowers developers, businesses, and individuals to build intelligent chatbots with our intuitive
-            drag-and-drop interface. No coding required.
+            MyBot lets you build a custom chatbot with your own instructions and knowledge base. It's a powerful tool to create a personalized AI experience, and it's completely free.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="text-lg px-8 py-6">
-              Start Building Free
+              Get Started for Free
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
