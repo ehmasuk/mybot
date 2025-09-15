@@ -19,7 +19,7 @@ export function NavbarProfile({ navItems }: { navItems: NavItem[] }) {
   const [dailyMessages, setDailyMessages] = useState<number>(0);
 
   const params = useParams();
-  const userId = params?.id as string | undefined;
+  const userId = params?.id;
 
   useEffect(() => {
     postData({
@@ -29,7 +29,7 @@ export function NavbarProfile({ navItems }: { navItems: NavItem[] }) {
         setDailyMessages(res.dailyMessages);
       },
     });
-  }, [userId, postData]);
+  }, []);
 
   return (
     <div className="relative w-full">
