@@ -1,9 +1,9 @@
-"use client";
-import { logoutAction } from "@/actions/authActions";
-import { MobileNav, MobileNavHeader, MobileNavMenu, MobileNavToggle, Navbar, NavbarButton, NavbarLogo, NavBody, NavItems } from "@/components/ui/resizable-navbar";
-import usePost from "@/hooks/usePost";
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+'use client';
+import { signOut } from 'next-auth/react';
+import { MobileNav, MobileNavHeader, MobileNavMenu, MobileNavToggle, Navbar, NavbarButton, NavbarLogo, NavBody, NavItems } from '@/components/ui/resizable-navbar';
+import usePost from '@/hooks/usePost';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 interface NavItem {
   name: string;
@@ -23,13 +23,13 @@ export function NavbarProfile({ navItems }: { navItems: NavItem[] }) {
 
   useEffect(() => {
     postData({
-      endpoint: "/daily-messages/check",
+      endpoint: '/daily-messages/check',
       data: { userId },
       onSuccess: (res) => {
         setDailyMessages(res.dailyMessages);
       },
     });
-  }, [userId,postData]);
+  }, [userId, postData]);
 
   return (
     <div className="relative w-full">
@@ -39,9 +39,8 @@ export function NavbarProfile({ navItems }: { navItems: NavItem[] }) {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-
-            <div className="text-sm ">Remaining daily message: {dailyMessages ? <b>{5-dailyMessages}</b> : 0} </div>
-            <NavbarButton onClick={() => logoutAction()} variant="primary">
+            <div className="text-sm ">Remaining daily message: {dailyMessages ? <b>{5 - dailyMessages}</b> : 0} </div>
+            <NavbarButton onClick={() => signOut()} variant="primary">
               Logout
             </NavbarButton>
           </div>
@@ -60,13 +59,12 @@ export function NavbarProfile({ navItems }: { navItems: NavItem[] }) {
                 <span className="block">{item.name}</span>
               </a>
             ))}
-            <div className="text-sm">Remaining daily message: {dailyMessages ? <b>{dailyMessages-5}</b> : 0} </div>
+            <div className="text-sm">Remaining daily message: {dailyMessages ? <b>{dailyMessages - 5}</b> : 0} </div>
             <div className="flex w-full flex-col gap-4">
-              <NavbarButton onClick={() => logoutAction()} variant="primary" className="w-full">
+              <NavbarButton onClick={() => signOut()} variant="primary" className="w-full">
                 Logout
               </NavbarButton>
             </div>
-            
           </MobileNavMenu>
         </MobileNav>
       </Navbar>

@@ -1,10 +1,9 @@
 "use client";
 
-import { logoutAction } from "@/actions/authActions";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Bot, Github, LogOut, User, UserIcon } from "lucide-react";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
 export function Navbar() {
@@ -40,7 +39,7 @@ export function Navbar() {
                       </DropdownMenuItem>
                     </Link>
 
-                    <DropdownMenuItem onClick={() => logoutAction()}>
+                    <DropdownMenuItem onClick={() => signOut()}>
                       <LogOut className="mr-2 h-4 w-4" />
                       <span>Log out</span>
                     </DropdownMenuItem>
