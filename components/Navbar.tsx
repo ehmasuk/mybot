@@ -32,7 +32,7 @@ export function Navbar() {
                   </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56" align="end" forceMount>
-                  <div style={{ all: "unset" }}>
+                  <div>
                     <Link href={`/user/${data?.user?.id}`}>
                       <DropdownMenuItem>
                         <User className="mr-2 h-4 w-4" />

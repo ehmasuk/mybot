@@ -4,7 +4,7 @@ MyBot is a web application that allows you to create and train your own AI chatb
 
 ## Live Demo
 
-[Link to your live demo]
+https://mybot-coral.vercel.app
 
 ## Features
 
@@ -43,7 +43,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  Clone the repo
     ```sh
-    git clone https://github.com/saskwatar/mybot.git
+    git clone https://github.com/ehmasuk/mybot.git
     ```
 2.  Install NPM packages
     ```sh

@@ -40,7 +40,7 @@ export function NavbarProfile({ navItems }: { navItems: NavItem[] }) {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
 
-            <div className="text-sm ">Remaining daily message: {dailyMessages ? <b>{dailyMessages-5}</b> : 0} </div>
+            <div className="text-sm ">Remaining daily message: {dailyMessages ? <b>{5-dailyMessages}</b> : 0} </div>
             <NavbarButton onClick={() => logoutAction()} variant="primary">
               Logout
             </NavbarButton>
