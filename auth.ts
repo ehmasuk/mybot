@@ -26,7 +26,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           throw new Error("Invalid password");
         }
 
-        // Return user object (NextAuth will handle session/JWT)
+        
         return {
           id: user.id,
           name: user.name,
@@ -36,13 +36,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     }),
   ],
   callbacks: {
-    jwt: async ({ token, user }: { token: JWT; user?: User }): Promise<JWT> => {
+    jwt: async ({ token, user }: { token: JWT; user?: User }) => {
       if (user) {
         token.user = user;
       }
       return token;
     },
-    session: async ({ session, token }: { session: any; token: JWT }): Promise<any> => {
+    session: async ({ session, token }: { session: any; token: JWT }) => {
       if (token) {
         session.user = token.user;
       }
