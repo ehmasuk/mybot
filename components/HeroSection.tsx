@@ -23,7 +23,7 @@ export function HeroSection() {
 
           {/* Main Heading */}
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl text-balance">
-            Create a <span className="text-primary">Chatbot</span> That Knows Your Data
+            Create a <span className="text-primary">Chatbot</span> With Your Personal Data
           </h1>
 
           {/* Subheading */}
@@ -33,7 +33,7 @@ export function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href={status === "authenticated" ? "/user/" + data?.user?.id : "/login"}>
+            <Link href={status === "authenticated" ? "/user/" + data?.user?.id : "/register"}>
               <Button size="lg" className="text-lg px-8 py-6">
                 Get Started for Free
                 <ArrowRight className="ml-2 h-5 w-5" />
