@@ -96,7 +96,7 @@ function KnowledgeTab() {
               className="border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 flex w-full rounded-md border bg-transparent px-3 py-2 text-base leading-relaxed resize-none outline-none focus:border-blue-500 focus:ring-blue-500/20 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-[200px]"
               disabled={postLoading || loading}
               placeholder={loading ? "Loading..." : "For example: \nQ: What are your shipping options?\nA: We offer standard, expedited, and overnight shipping.\n\nQ: What is your return policy?\nA: We accept returns within 30 days of purchase."}
-              maxLength={1000}
+              maxLength={5000}
               value={newKnowledge}
               onChange={handleChange}
             />

@@ -22,7 +22,6 @@ function TestDrive() {
               <p className="font-semibold mb-2 text-center">Important Notes:</p>
               <ul className="list-disc pl-5 space-y-3">
                 <li>Ensure you have defined your bot&apos;s instructions and provided a knowledge base before testing.</li>
-                <li>You can send up to 5 messages per day for testing purposes.</li>
                 <li>This free version uses models that may experience slight delays.</li>
               </ul>
             </div>

@@ -71,8 +71,8 @@ function ChatBox() {
     e.preventDefault();
     if (!userMessage.trim()) return;
 
-    const dailyLimitExceeded = await updateDailyMessages();
-    if (dailyLimitExceeded) return;
+    // const dailyLimitExceeded = await updateDailyMessages();
+    // if (dailyLimitExceeded) return;
 
     const message = userMessage.trim();
     setUserMessage("");
@@ -107,6 +107,8 @@ function ChatBox() {
     }
   };
 
+
+  // get users conversations
   const getUsersConversations = async (id: string) => {
     try {
       const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/conversation?conversationId=${id}`);

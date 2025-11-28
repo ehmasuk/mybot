@@ -33,7 +33,7 @@ export const POST = async (req: NextRequest): Promise<NextResponse> => {
 
     // create model from gemini
     const model = new ChatGoogleGenerativeAI({
-      model: "gemini-1.5-flash",
+      model: "gemini-2.5-flash",
       maxOutputTokens: 2048,
       apiKey: process.env.GEMINI_API_KEY,
       verbose: true,

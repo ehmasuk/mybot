@@ -25,7 +25,7 @@ function BotLayout({ children }: { children: React.ReactNode }) {
       active: pathname === `/user/${params.id}/knowledge`,
     },
     {
-      name: "Test Drive",
+      name: "Playground",
       link: `/user/${params.id}/test-drive`,
       active: pathname === `/user/${params.id}/test-drive`,
     },
